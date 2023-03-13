@@ -6,6 +6,7 @@
 class Kolo : public FiguraPlaska
 {
 private:
+    static constexpr double PI = 3.14;
     double promien;
 
 protected:
