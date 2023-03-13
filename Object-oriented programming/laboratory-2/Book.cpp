@@ -72,9 +72,8 @@ void Book::SetTitle(std::string&& title)
 
 Book& Book::operator=(const Book& book)
 {
-    Book temp(book);
-    std::swap(this->author, temp.author);
-    std::swap(this->title, temp.title);
+    this->author = book.author;
+    this->title = book.title;
     return *this;
 }
 
