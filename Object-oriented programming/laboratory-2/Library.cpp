@@ -50,6 +50,17 @@ std::size_t Library::GetSize() const
     return this->size;
 }
 
+std::string Library::SearchForAuthor(const std::string& title) const
+{
+    for(int i = 0; i < this->GetSize(); i++)
+    {
+        if(this->books[i].GetTitle() == title)
+            return this->books[i].GetAuthor();
+    }
+
+    return "Nie znaleziono";
+}
+
 Library& Library::operator=(const Library& library)
 {
     if(this->size != library.size)
@@ -86,10 +97,10 @@ const Book& Library::operator[](std::size_t index) const
 
 std::ostream& operator<<(std::ostream& os, const Library& library)
 {
-    os << std::string("Library: ");
     for(int i = 0; i < library.size; i++)
     {
-        os << library.books[i] << ' ';
+        if(!(library.books[i].GetTitle()).empty())
+            os << library.books[i] << '\n';
     }
     return os;
 }

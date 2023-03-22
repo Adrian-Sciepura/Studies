@@ -9,11 +9,12 @@ class Book
 private:
     std::string author;
     std::string title;
+    std::string addDate;
 
 public:
     Book();
-    Book(const std::string& author, const std::string& title);
-    Book(std::string&& author, std::string&& title);
+    Book(const std::string& author, const std::string& title, const std::string& addDate);
+    Book(std::string&& author, std::string&& title, std::string&& addDate);
     Book(const Book& book);
     Book(Book&& book);
     ~Book();
@@ -25,6 +26,8 @@ public:
     std::string GetTitle() const;
     void SetTitle(const std::string& title);
     void SetTitle(std::string&& title);
+
+    std::string GetAddDate() const;
 
     Book& operator=(const Book& book);
     Book& operator=(Book&& book);

@@ -18,6 +18,7 @@ public:
     ~Library();
     
     std::size_t GetSize() const;
+    std::string SearchForAuthor(const std::string& title) const;
 
     Library& operator=(const Library& library);
     Library& operator=(Library&& library);
