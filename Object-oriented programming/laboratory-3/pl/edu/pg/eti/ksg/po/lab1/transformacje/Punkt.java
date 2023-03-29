@@ -1,7 +1,7 @@
 package pl.edu.pg.eti.ksg.po.lab1.transformacje;
 
 public class Punkt {
-    private final double x, y;
+    protected final double x, y;
     public Punkt(double x, double y)
     {
         this.x = x;
