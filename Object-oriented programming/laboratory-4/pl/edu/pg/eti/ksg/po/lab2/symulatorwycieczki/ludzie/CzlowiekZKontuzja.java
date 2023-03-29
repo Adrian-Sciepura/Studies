@@ -13,8 +13,4 @@ public class CzlowiekZKontuzja extends Czlowiek
         return 2;
     }
 
-    @Override
-    public void reagujNaAtrakcje(Atrakcja a)
-    {
-    }
 }
