@@ -29,24 +29,27 @@ while [ "$CHOICE" -ne 7 ]; do
 	"5") read CONTENT;;
 	"6") 
 	COMMAND=""
+	
+	if [ -n "$CATALOG" ]; then
+		COMMAND="find $CATALOG "
+	else
+		COMMAND="find . "
+	fi
+	
 	if [ -n "$NAME" ]; then
-		if [ -n "$CATALOG" ]; then
-			COMMAND="find $CATALOG -name $NAME -type f "
-		else
-			COMMAND="find . -name $NAME -type f "
-		fi
+		COMMAND+="-name $NAME -type f "
+	fi
 		
-		if [ -n "$BIGGER_THAN" ]; then
-			COMMAND+="-size +${BIGGER_THAN}M "
-		fi
+	if [ -n "$BIGGER_THAN" ]; then
+		COMMAND+="-size +${BIGGER_THAN}M "
+	fi
 		
-		if [ -n "$SMALLER_THAN" ]; then
-			COMMAND+="-size -${SMALLER_THAN}M " 
-		fi
+	if [ -n "$SMALLER_THAN" ]; then
+		COMMAND+="-size -${SMALLER_THAN}M " 
+	fi
 		
-		if [ -n "$CONTENT" ]; then
-			COMMAND+="-exec grep \"${CONTENT}\" {} +" 
-		fi
+	if [ -n "$CONTENT" ]; then
+		COMMAND+="-exec grep \"${CONTENT}\" {} +" 
 	fi
 	
 	OUT=$(eval $COMMAND)
