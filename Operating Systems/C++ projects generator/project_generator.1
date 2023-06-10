@@ -1,0 +1,54 @@
+.TH PROJECT_GENERATOR 1 "June 2023" "Project Generator Manual" "User Commands"
+
+.SH NAME
+project_generator \- script for C++ project statistics and compilation
+
+.SH SYNOPSIS
+.B project_stats
+.BR [ \-d
+.I directory ]
+[\fIOPTIONS\fR]
+
+.SH DESCRIPTION
+The \fBproject_generator\fR script is designed to provide various functionalities for a C++ code project.
+
+.PP
+It can generate a Makefile, compile the code, run the compiled program, and perform code statistics.
+
+.SH OPTIONS
+.TP
+.B \-d \fIDIRECTORY\fR
+Specifies the project directory path for processing.
+
+.TP
+.B \-c
+Compiles the code in the project.
+
+.TP
+.B \-r
+Runs the compiled program.
+
+.TP
+.B \-s
+Performs code statistics for the project.
+
+.TP
+.B \-h
+Displays the help message.
+
+.TP
+.B \-v
+Displays the script version.
+
+.SH SEE ALSO
+.BR make,
+.BR g++,
+.BR gcc
+
+
+.SH BUGS 
+There are no known bugs in this script. Please report any issues or bugs to the author.
+
+.SH AUTHOR
+Adrian Ściepura 193350
+
